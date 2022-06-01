@@ -9,13 +9,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.fatecararas.caixadesugestoes.model.Curso;
-import br.com.fatecararas.caixadesugestoes.repositories.CursoRepository;
+import br.com.fatecararas.caixadesugestoes.services.CursoService;
 
 @SpringBootApplication
 public class CaixadesugestoesApplication implements CommandLineRunner{
 
 	@Autowired
-	private CursoRepository cursoRepository;
+	private CursoService cursoService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CaixadesugestoesApplication.class, args);
@@ -29,7 +29,12 @@ public class CaixadesugestoesApplication implements CommandLineRunner{
 
 		List<Curso> cursos = Arrays.asList(c1, c2, c3);
 
-		cursoRepository.saveAll(cursos);
+		cursoService.salvarTodos(cursos);
+
+		List<Curso> todos = cursoService.buscarTodos();
+
+		todos.forEach(System.out::println);
+
 	}
 
 }
