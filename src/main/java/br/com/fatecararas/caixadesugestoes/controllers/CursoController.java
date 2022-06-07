@@ -14,4 +14,6 @@ public class CursoController {
     public String adicionarCurso(Curso curso) {
         return "cursos/adicionar";
     }
+
+    //TODO: Criar Página de visualização de cursos cadastrados.
 }
