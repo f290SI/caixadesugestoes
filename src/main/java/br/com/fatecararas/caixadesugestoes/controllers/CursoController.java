@@ -26,4 +26,5 @@ public class CursoController {
         service.salvar(curso);
         return "redirect:/cursos/adicionar";
     }
+
 }
