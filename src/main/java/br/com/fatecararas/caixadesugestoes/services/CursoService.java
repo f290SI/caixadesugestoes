@@ -18,6 +18,7 @@ public class CursoService {
     public List<Curso> buscarTodos() {
         List<Curso> cursos = new ArrayList<>();
         cursos = repository.findAll();
+        System.out.println(cursos);
         return cursos;
     }
 

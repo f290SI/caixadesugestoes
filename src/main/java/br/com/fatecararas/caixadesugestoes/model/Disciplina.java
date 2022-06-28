@@ -1,9 +1,14 @@
 package br.com.fatecararas.caixadesugestoes.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Disciplina {
@@ -13,11 +18,13 @@ public class Disciplina {
     private Integer id;
     private String nome;
 
-    
+    @JsonIgnore
+    @ManyToMany(mappedBy = "disciplinas")
+    private List<Curso> cursos;
+
     public Disciplina(String nome) {
         this.nome = nome;
     }
-
 
     public Disciplina() {
     }
@@ -42,10 +49,12 @@ public class Disciplina {
         this.nome = nome;
     }
 
+    public List<Curso> getCursos() {
+        return cursos;
+    }
 
-    @Override
-    public String toString() {
-        return "Disciplina [id=" + id + ", nome=" + nome + "]";
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
     
 }

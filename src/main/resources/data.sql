@@ -16,3 +16,19 @@ values
 ('Antonia Medeiros', 'Eu gosto de prgramar... O Front End!' , now(), 1, 1),
 ('José Silva', 'Gostei muito das aulas Flutter, ele deveria ter sido inventado muito antes!. ', now(), 2, 3),
 ('Enzo Silva', 'Vamos criar um Discord para compartilhar conteúdo, experiências e conhecimentos sobre desenvolvimento?', now(), 2, 2);
+
+insert into disciplina (nome) values 
+('Tópicos I'),
+('Tópicos II'),
+('Tópicos III'),
+('Desenvolvimento para Dispositivos Móveis I'),
+('Desenvolvimento para Dispositivos Móveis II'),
+('Desenvolvimento para Servidores II');
+
+insert into curso_disciplina (id_curso, id_disciplina) values
+(1,1),
+(1,2),
+(1,3),
+(2,4),
+(2,5),
+(2,5);
