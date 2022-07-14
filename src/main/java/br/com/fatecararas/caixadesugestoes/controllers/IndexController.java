@@ -25,6 +25,8 @@ public class IndexController {
 
         model.addAttribute("sugestoes", sugestoes);
 
+        System.out.println("Passou pelo index controller");
+
         return "index";
     }
 }

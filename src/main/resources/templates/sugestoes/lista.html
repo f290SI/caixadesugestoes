@@ -12,7 +12,7 @@
                 <div th:each="sugestao: ${sugestoes}" class="card shadow my-3">
                     <div class="row g-0">
                         <div class="col-sm-3 col-md-2 col-lg-1">
-                            <span class="fa-3x ms-3 mt-3 fa-solid " th:classappend="(${sugestao.tipo.id == 1 } ? 'fa-comment' : '') + 
+                            <span class="fa-3x ms-3 mt-3 fa-solid fa-lightbulb" th:classappend="(${sugestao.tipo.id == 1 } ? 'fa-comment' : '') + 
                             (${sugestao.tipo.id == 2 } ? 'fa-heart-crack' : '') + 
                             (${sugestao.tipo.id == 3 } ? 'fa-lightbulb' : '') +
                             (${sugestao.tipo.id == 4 } ? 'fa-heart' : '')"></span>
