@@ -18,15 +18,20 @@ public class CursoService {
     public List<Curso> buscarTodos() {
         List<Curso> cursos = new ArrayList<>();
         cursos = repository.findAll();
+        System.out.println(cursos);
         return cursos;
     }
 
-    public void salvar(Curso curso) {
-        repository.save(curso);
+    public Curso salvar(Curso curso) {
+        return repository.save(curso);
     }    
 
     public void salvarTodos(Iterable<Curso> cursos) {
         repository.saveAll(cursos);
+    }
+
+    public void remover(Integer id) {
+        repository.deleteById(id);
     }
 
 }
